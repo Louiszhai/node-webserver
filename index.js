@@ -20,14 +20,15 @@ function doHandler(method, handle){
 		if(handle.hasOwnProperty(path)){
 			(function(path){
 				app[method](path, function(req, res) {
-					console.log(req.headers);
 					res.writeHead(200,{
-						'Content-Type': 'text/json',
+						'Content-Type': 'text/json;charset=UTF-8',
 						'Access-Control-Allow-Credentials': true,
 						'Access-Control-Allow-Headers': 'x-requested-with,Content-Type',
 						'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
 						'Access-Control-Allow-Origin': req.headers.origin || req.headers.host,
-						'Access-Control-Max-Age': 3600
+						'Access-Control-Max-Age': 3600,
+						'Server': 'Node WebServer',
+						'Website': 'https://github.com/Louiszhai/node-webserver'
 					});
 					res.write(JSON.stringify(handle[path]));
 					res.end();
