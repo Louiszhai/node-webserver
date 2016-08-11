@@ -1,11 +1,11 @@
-var app = require('express')(),
-	http = require('http').Server(app);
+var express = require('express'),
+	app = express();
 
 //*************************** handler ***************************
 var handlers = {
 	'get': {
 		'/': {
-			getKey : 'Welcome to simple node  WebServer!'
+			getKey : 'Welcome to Simple Node  WebServer!'
 		}
 	},
 	'post': {
@@ -45,7 +45,8 @@ for(var method in handlers) {
 }
 //*************************** handler ***************************
 
-http.listen(10108, function(){
+app.use(express.static('./'));
+
+app.listen(10108, function(){
 	console.log('listening on *:10108');
 });
-
