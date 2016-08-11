@@ -12,7 +12,13 @@ var handlers = {
 		'/test': {
 			postKey : 'post测试数据'
 		}
+	},
+	'options':{
+		'/*': {
+			status: 'options ok!'
+		}
 	}
+
 };
 
 function doHandler(method, handle){
