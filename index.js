@@ -50,9 +50,10 @@ for(var method in handlers) {
 	}
 }
 //*************************** handler ***************************
+//var bodyParser = require('body-parser');
+//app.use(bodyParser({ uploadDir: './upload' }));
 
 app.use(express.static('./'));
-
 app.listen(10108, function(){
 	console.log('listening on *:10108');
 });
