@@ -6,7 +6,9 @@ var handlers = {
 	'get': {
 		'/': {
 			getKey : 'Welcome to Simple Node  WebServer!'
-		}
+		},
+		'/test1':'test1',
+		'/test2':'test2'
 	},
 	'post': {
 		'/test': {
